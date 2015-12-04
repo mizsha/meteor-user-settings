@@ -3,9 +3,12 @@
   {{> _changeEmail}}
   {{#if email}}
     {{#unless verified}}
+      <hr>
       {{> _verifyEmail}}
     {{/unless}}
+    <hr>
     {{> _changePassword}}
+    <hr>
     {{> _resetPassword}}
   {{/if}}
 {{/with}}
@@ -68,9 +71,11 @@
 </template>
 
 
-<template name="_changePassword">{{#with addContext}}
+<template name="_changePassword">
+{{#with addContext}}
   <form class="setting change-password">
     <h1>Change password</h1>
+
     <div class="form-group{{#if _in error 'wrong-password' 'old-blank'}} has-error{{/if}}">
       <label for="password">Old Password</label>
       <input class="form-control" type="password" name="password" id="password">
@@ -81,31 +86,31 @@
       <input class="form-control" type="password" name="newPassword" id="newPassword">
     </div>
 
-    <div class="actions">
-      {{#if _in error 'wrong-password' 'old-blank'}}
-        <span class="error pw-error">
-          <i class="fa fa-warning"></i> 
-          {{#if _eq error "wrong-password"}}Wrong password{{/if}}
-          {{#if _eq error "old-blank"}}Cannot be blank{{/if}}
-        </span>
-      {{/if}}
+    {{#if _in error 'wrong-password' 'old-blank'}}
+      <div class="alert alert-warning" role="alert">
+        <i class="fa fa-warning"></i> 
+        {{#if _eq error "wrong-password"}}Wrong password{{/if}}
+        {{#if _eq error "old-blank"}}Cannot be blank{{/if}}
+      </div>
+    {{/if}}
 
-      {{#if _eq error "new-blank"}}
-        <span class="error new-pw-error">
-          <i class="fa fa-warning"></i>
-          Cannot be blank
-        </span>
-      {{/if}}
+    {{#if _eq error "new-blank"}}
+      <div class="alert alert-warning" role="alert">
+        <i class="fa fa-warning"></i>
+        Cannot be blank
+      </div>
+    {{/if}}
 
-      {{#if _eq error "unknown"}}
-        {{> _errorMsg}}
-      {{/if}}
+    {{#if _eq error "unknown"}}
+      {{> _errorMsg}}
+    {{/if}}
 
-      {{#if saved}}{{> _successMsg}}{{/if}}
-      {{> saveButton buttonText="Change"}}
-    </div>
+    {{#if saved}}{{> _successMsg}}{{/if}}
+    {{> saveButton buttonText="Change"}}
+
   </form>
-{{/with}}</template>
+{{/with}}
+</template>
 
 
 <template name="_resetPassword">
