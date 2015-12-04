@@ -27,16 +27,11 @@
 </template>
 
 <template name="_changeEmail">{{#with addContext}}
-   <form class="change-email setting">
-   <div class="main">
-      <span class="title">{{#if email}}Change{{else}}Set{{/if}} Email</span>
-      <div class="input-field">
-        <label class="{{#if email}}active{{/if}}" for="email">Email</label>
-        <input type="text" name="email" id="email" value="{{email}}"
-               class="{{#if error}}error{{/if}}" />
-      </div>
+  <form class="change-email setting">
+    <div class="form-group{{#if error}} has-error{{/if}}">
+      <label for="exampleInputEmail1">{{#if email}}Change{{else}}Set{{/if}} Email</label>
+      <input type="email" class="form-control" name="email" id="email" value="{{email}}" class="{{#if error}}error{{/if}}">
     </div>
-
     <div class="actions">
       {{#if error}}<span class="error">
         <i class="fa fa-warning"></i> 
