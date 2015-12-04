@@ -8,9 +8,9 @@ Package.describe({
 Package.onUse(function(api) {
   'use strict';
   api.versionsFrom('METEOR@1.1.0.2');
-  api.use('mizsha:spacebars-helpers@0.1.0');
-  api.use('mizsha:save-button@0.1.0');
-  api.use('mizsha:instance-vars@0.2.0');
+  api.use('fongandrew:spacebars-helpers@0.1.0');
+  api.use('fongandrew:save-button@0.1.0');
+  api.use('fongandrew:instance-vars@0.2.0');
   api.use('accounts-password');
   api.use('templating', 'client');
   api.use('underscore');
