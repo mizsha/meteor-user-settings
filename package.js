@@ -1,6 +1,6 @@
 Package.describe({
   name: 'mizsha:user-settings',
-  version: '0.1.0',
+  version: '0.1.1',
   summary: 'Templates for basic account setting stuff',
   git: 'https://github.com/mizsha/meteor-user-settings.git'
 });
