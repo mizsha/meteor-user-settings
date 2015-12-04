@@ -90,7 +90,7 @@
   });
 
   Template._verifyEmail.events({
-    'submit .js-verify-email': function(e, template) {
+    'submit .verify-email': function(e, template) {
       e.preventDefault();
       template.resetVars();
       template.setVar('saving', true);
@@ -99,7 +99,7 @@
         if (err) {
           template.setVar('error', 'unknown');
         } else {
-          template.set('saved', true);
+          template.setVar('saved', true);
         }
       });
     }
