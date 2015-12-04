@@ -1,10 +1,10 @@
-#fongandrew:user-settings
+#mizsha:user-settings
 Templates for basic user account settings like changing passwords or verifying
 emails. Works with Meteor's accounts-password package.
 
 Installation
 ------------
-`meteor add fongandrew:user-settings`
+`meteor add mizsha:user-settings`
 
 Usage
 -----

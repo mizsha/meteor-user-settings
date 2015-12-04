@@ -8,7 +8,7 @@
 
   // Meteor methods for simple account management stuff
   Meteor.methods({
-    'fongandrew:user-settings/resendVerify': function() {
+    'mizsha:user-settings/resendVerify': function() {
       if (! this.userId) {
         throw new Meteor.Error(401, "login-required",
           "You must be logged in to perform this action");
@@ -20,7 +20,7 @@
       };
     },
 
-    'fongandrew:user-settings/changeEmail': function(address) {
+    'mizsha:user-settings/changeEmail': function(address) {
       if (! this.userId) {
         throw new Meteor.Error(401, "login-required",
           "You must be logged in to perform this action");
